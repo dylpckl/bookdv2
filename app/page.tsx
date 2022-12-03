@@ -3,8 +3,8 @@ import styles from './page.module.css'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
+    <div className='bg-pink-300'>
+      <main className='bg-sky-300'>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js 13!</a>
         </h1>
