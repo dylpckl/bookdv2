@@ -11,6 +11,7 @@ function page() {
         <a href="/club/3">go to club 3</a>
       </div>
 
+      <button>create club</button>
 
     </div>
   )
