@@ -26,7 +26,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/layout.jsx",
-    "app/club/page.js",
+    "app/clubs/page.js",
     "lib/index.js"
   ],
   "exclude": ["node_modules"]
