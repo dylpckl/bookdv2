@@ -1,14 +1,13 @@
 "use client";
-import Router from "next/router";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 // import { createClub } from "../../lib/clubs";
 
 export default function CreateClubButton() {
-  const [name, setName] = useState("new club");
+  const router = useRouter();
+  const [name, setName] = useState("something else");
   const [description, setDescription] = useState("a new club to use");
-  const [ownerIdToPass, setOwnerIdToPass] = useState(
-    "clcjc37n000000wasft7knk9x"
-  );
+  const [ownerId, setOwnerId] = useState("clcjc37n000000wasft7knk9x");
   //   const handleCreate = async () => {
   //     try {
   //       const body = { name, description };
@@ -40,8 +39,6 @@ export default function CreateClubButton() {
   //   console.log(data.message);
   // });
 
-  // await Router.push(`/clubs/${newClubId}`)
-
   // const body = {
   //   name: "clubName",
   //   description: "a cool club",
@@ -49,14 +46,20 @@ export default function CreateClubButton() {
   // };
 
   const handleCreate = async () => {
-    const body = { name, description, ownerIdToPass };
-    console.log(body);
+    const body = { name, description, ownerId };
+    // console.log(body);
     try {
-      await fetch(`/api/clubs`, {
+      const res = await fetch(`/api/clubs`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
+      const result = await res.json();
+      console.log(result)
+      if (res.status === 200) {
+        // console.log(res.json());
+        router.push(`/clubs/${result.club.id}`);
+      }
     } catch (error) {
       console.error(error);
     }
