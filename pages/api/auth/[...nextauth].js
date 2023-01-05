@@ -1,7 +1,7 @@
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
-import prisma from "../../../lib/index"
+import prisma from "../../../lib/prisma/index"
 
 export default async function auth(req, res) {
   return await NextAuth(req, res, {

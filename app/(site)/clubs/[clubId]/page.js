@@ -16,12 +16,13 @@
 //     )
 // }
 
-import { getClubById } from "../../../lib/clubs";
+import { getClubById } from '../../../../lib/prisma/clubs'
 import Club from './club'
 
 const Page = async ({ params }) => {
-    console.log(typeof(parseInt(params.clubId)))
-    const clubId = parseInt(params.clubId)
+    // console.log(typeof (parseInt(params.clubId)))
+    // const clubId = parseInt(params.clubId)
+    const clubId = (params.clubId)
     const { club } = await getClubById(clubId)
     return <Club club={club} />
 }

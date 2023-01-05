@@ -1,4 +1,4 @@
-import { createUser, getUsers } from '../../../lib/users'
+import { createUser, getUsers } from '@/lib/prisma/users'
 
 const handler = async (req, res) => {
     if (req.method === 'GET') {

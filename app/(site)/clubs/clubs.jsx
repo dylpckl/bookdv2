@@ -1,8 +1,6 @@
-import { getClubs, createClub } from "../../lib/clubs";
+import { getClubs, createClub } from "../../../lib/prisma/clubs"; // this is a server component, so we can access getClubs()
 import Link from "next/link";
-import { redirect } from "next/dist/server/api-utils";
 import CreateClubButton from "./CreateClubButton";
-// this is a server component, so we can access getClubs()
 
 const Clubs = async () => {
   const { clubs } = await getClubs();

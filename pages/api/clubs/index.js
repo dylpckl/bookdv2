@@ -1,4 +1,4 @@
-import { createClub, getClubs, getClubById } from '../../../lib/clubs'
+import { createClub, getClubs, getClubById } from '../../../lib/prisma/clubs'
 
 const handler = async (req, res) => {
   if (req.method === 'GET') {
