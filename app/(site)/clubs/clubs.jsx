@@ -7,7 +7,7 @@ const Clubs = async () => {
 
   return (
     <div className="bg-sky-300">
-      <ul>
+      <ul className="mb-12">
         {clubs?.map((club) => (
           <li key={club.id}>
             <Link href={`/clubs/${club.id}`}>{club.name}</Link>

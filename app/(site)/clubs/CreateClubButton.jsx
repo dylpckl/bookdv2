@@ -6,7 +6,9 @@ import { useState } from "react";
 export default function CreateClubButton() {
   const [name, setName] = useState("new club");
   const [description, setDescription] = useState("a new club to use");
-  const [ownerId, setownerId] = useState(1);
+  const [ownerIdToPass, setOwnerIdToPass] = useState(
+    "clcjc37n000000wasft7knk9x"
+  );
   //   const handleCreate = async () => {
   //     try {
   //       const body = { name, description };
@@ -47,10 +49,12 @@ export default function CreateClubButton() {
   // };
 
   const handleCreate = async () => {
-    const body = { name, description, ownerId };
+    const body = { name, description, ownerIdToPass };
+    console.log(body);
     try {
-      await fetch(`/api/clubs/`, {
+      await fetch(`/api/clubs`, {
         method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
     } catch (error) {
