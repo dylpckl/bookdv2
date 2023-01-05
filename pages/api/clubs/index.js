@@ -5,7 +5,7 @@ const handler = async (req, res) => {
     try {
       const { clubs, error } = await getClubs()
       if (error) throw new Error(error)
-      return res.status(200).json({ users })
+      return res.status(200).json({ clubs })
     } catch (error) {
       return res.status(500).json({ error: error.message })
     }
@@ -16,7 +16,7 @@ const handler = async (req, res) => {
       const data = req.body
       const { club, error } = await createClub(data)
       if (error) throw new Error(error)
-      return res.status(200).json({ user })
+      return res.status(200).json({ club })
     } catch (error) {
       return res.status(500).json({ error: error.message })
     }

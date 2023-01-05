@@ -3,7 +3,6 @@ const Club = ({ club }) => {
   return (
     <section>
       <h1>{club.name}</h1>
-      club page
     </section>
   );
 };
