@@ -36,7 +36,7 @@ export default function DeleteClubButton({ clubId }) {
       console.error(error);
     }
 
-    // await router.push(`/clubs`);
+    await router.push(`/clubs`);
   };
 
   return <button onClick={handleDeleteButton}>delete club</button>;

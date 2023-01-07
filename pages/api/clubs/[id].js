@@ -2,9 +2,9 @@ import prisma from '../../../lib/prisma'
 import { getClubById, deleteClub } from "../../../lib/prisma/clubs";
 
 export default async function handle(req, res) {
-    res.status(200).json({message: `welcome to ${req.query.id}`})
-    const { clubId } = req.query.id
-    console.log({ clubId })
+    // res.status(200).json({ message: `welcome to ${req.query.id}` })
+    const clubId = req.query.id
+    console.log(clubId)
     if (req.method === 'GET') {
         try {
             const { club, error } = await getClubById(clubId)
