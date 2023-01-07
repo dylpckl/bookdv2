@@ -13,7 +13,8 @@ const SignInButton = () => {
             src={session.user.image}
             alt={session.user.name}
             className="inline-block rounded-full"
-            fill
+            width={48}
+            height={48}
           />
         ) : (
           <span>no image</span>
