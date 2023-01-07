@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 
-export default function DeleteClubButton(clubId) {
+export default function DeleteClubButton({ clubId }) {
   const router = useRouter();
 
   //   const handleCreate = async () => {
@@ -25,13 +25,13 @@ export default function DeleteClubButton(clubId) {
   //   };
 
   console.log("deletebuttonzxx", clubId);
-  const handleDeleteButton = async (clubId) => {
+  const handleDeleteButton = async () => {
+    console.log("inside handleDelete:", clubId);
     try {
       const res = await fetch(`/api/clubs/${clubId}`, {
         method: "DELETE",
       });
       const result = await res.json();
-      
     } catch (error) {
       console.error(error);
     }

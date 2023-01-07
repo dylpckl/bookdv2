@@ -7,6 +7,7 @@ import Club from './club'
 
 const Page = async ({ params }) => {
     const clubId = (params.clubId)
+    console.log(clubId)
     const { club } = await getClubById(clubId)
     return (
         <div>
